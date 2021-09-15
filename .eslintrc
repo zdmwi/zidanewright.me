@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "globals": {
+    "__PATH_PREFIX__": true
+  },
+  "extends": [
+    "react-app",
+    "prettier",
+    "plugin:react/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/no-unescaped-entities": "off"
+  }
+}
