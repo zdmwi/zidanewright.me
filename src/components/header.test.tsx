@@ -1,11 +1,19 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Header from './header';
+import { PureHeader as Header } from './header';
+import { GetSiteTitleQuery } from '../../graphql-types';
 
 describe('Header', () => {
-  it('renders correctly', () => {
-    const { getByTestId } = render(<Header siteTitle="Hello" />);
-    expect(getByTestId('header-test')).toHaveTextContent('Hello');
+  it('does not crash when rendered', () => {
+    const data: GetSiteTitleQuery = {
+      site: {
+        siteMetadata: {
+          title: 'Gatsby Starter Blog',
+        },
+      },
+    };
+    const { getByTestId } = render(<Header data={data} />);
+    expect(getByTestId('header-test')).toBeInTheDocument();
   });
 });
