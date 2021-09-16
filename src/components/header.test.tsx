@@ -1,11 +1,18 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Header from './header';
+import { PureHeader as Header } from './header';
 
 describe('Header', () => {
-  it('renders correctly', () => {
-    const { getByTestId } = render(<Header siteTitle="Hello" />);
-    expect(getByTestId('header-test')).toHaveTextContent('Hello');
+  it('does not crash when rendered', () => {
+    const data: any = {
+      site: {
+        siteMetadata: {
+          title: 'Gatsby Starter Blog',
+        },
+      },
+    };
+    const { getByTestId } = render(<Header data={data} />);
+    expect(getByTestId('header-test')).toBeInTheDocument();
   });
 });
