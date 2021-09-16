@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../../components/layout';
-import { Query } from '../../../graphql-types';
+import { GetAllBlogPostsQuery } from '../../../graphql-types';
 
 interface Props {
-  data: Query;
+  data: GetAllBlogPostsQuery;
 }
 
 export const BlogPage: React.FC<Props> = ({ data }) => {
@@ -23,7 +23,7 @@ export const BlogPage: React.FC<Props> = ({ data }) => {
 };
 
 export const query = graphql`
-  query {
+  query GetAllBlogPosts {
     allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         frontmatter {

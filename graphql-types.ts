@@ -2497,9 +2497,9 @@ export type SiteBuildMetadataSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
-export type GetTitleQueryVariables = Exact<{ [key: string]: never }>;
+export type GetSiteTitleQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetTitleQuery = {
+export type GetSiteTitleQuery = {
   site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }>;
 };
 
@@ -2509,9 +2509,9 @@ export type Unnamed_1_Query = {
   site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }>;
 };
 
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never }>;
+export type GetAllBlogPostsQueryVariables = Exact<{ [key: string]: never }>;
 
-export type Unnamed_2_Query = {
+export type GetAllBlogPostsQuery = {
   allMdx: {
     nodes: Array<
       Pick<Mdx, 'id' | 'slug'> & {
@@ -2521,11 +2521,11 @@ export type Unnamed_2_Query = {
   };
 };
 
-export type Unnamed_3_QueryVariables = Exact<{
+export type GetBlogPostByIdQueryVariables = Exact<{
   id?: Maybe<Scalars['String']>;
 }>;
 
-export type Unnamed_3_Query = {
+export type GetBlogPostByIdQuery = {
   mdx?: Maybe<
     Pick<Mdx, 'body'> & {
       frontmatter?: Maybe<Pick<MdxFrontmatter, 'title' | 'date'>>;

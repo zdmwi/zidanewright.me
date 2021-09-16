@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/layout';
-import { Query } from '../../../graphql-types';
+import { GetBlogPostByIdQuery } from '../../../graphql-types';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 interface Props {
-  data: Query;
+  data: GetBlogPostByIdQuery;
 }
 
 const BlogPost: React.FC<Props> = ({ data }) => {
@@ -18,7 +18,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
 };
 
 export const query = graphql`
-  query ($id: String) {
+  query GetBlogPostById($id: String) {
     mdx(id: { eq: $id }) {
       frontmatter {
         title

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Query } from '../../graphql-types';
+import { GetSiteTitleQuery } from '../../graphql-types';
 
 interface Props {
-  data: Query;
+  data: GetSiteTitleQuery;
 }
 
 export const PureHeader: React.FC<Props> = ({ data }) => {
@@ -12,7 +12,7 @@ export const PureHeader: React.FC<Props> = ({ data }) => {
 
 export const Header: React.FC = () => {
   const data = useStaticQuery(graphql`
-    query GetTitle {
+    query GetSiteTitle {
       site {
         siteMetadata {
           title
