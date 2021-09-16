@@ -4,7 +4,6 @@ module.exports = {
     title: 'Zidane Wright',
   },
   plugins: [
-    `gatsby-plugin-graphql-codegen`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -12,5 +11,7 @@ module.exports = {
         path: `${__dirname}/blog`,
       },
     },
+    `gatsby-plugin-graphql-codegen`,
+    `gatsby-plugin-mdx`,
   ],
 };
